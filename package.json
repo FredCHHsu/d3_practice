@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "dev": "DEBUG=d3-101:* npm start"
+    "start": "NODE_ENV=production webpack; node ./bin/www",
+    "dev": "DEBUG=d3-101:* npm start",
+    "dev-server": "NODE_ENV=dev node ./bin/www"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -13,6 +14,9 @@
     "express": "~4.13.1",
     "jade": "~1.11.0",
     "morgan": "~1.6.1",
-    "serve-favicon": "~2.3.0"
+    "proxy-middleware": "^0.15.0",
+    "serve-favicon": "~2.3.0",
+    "url": "^0.11.0",
+    "webpack": "^1.12.9"
   }
 }
