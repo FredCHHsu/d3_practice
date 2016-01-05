@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+var node_modules_dir = path.resolve(__dirname, 'node_modules');
 var port = 8083;
 
 //standard mode
@@ -10,6 +11,15 @@ var webpack_config = {
         path: path.resolve(__dirname, 'public/js'),
         filename: 'bundle_main.js',
     },
+    module:{
+      loaders:[
+        {
+          test: /\.css$/,
+          exclude: [node_modules_dir],
+          loaders: [ 'style', 'css' ]
+        }
+      ]
+    }
 };
 
 //devlopment mode

@@ -32,6 +32,9 @@
 //   .exit()
 //   .remove();
 // data created by www.json-generator.com
+
+d3 = require('d3');
+
 d3.json("http://www.json-generator.com/api/json/get/chykKqMlvm?indent=2", function (error, data) {
 
   var svg = d3.select('body').append('svg');
